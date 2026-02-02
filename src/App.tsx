@@ -45,7 +45,7 @@ const toRow = (student: Student): StudentRow => ({
 })
 
 export default function App() {
-  const [currentTab, setCurrentTab] = useState('2')
+  const [currentTab, setCurrentTab] = useState('all')
   const [students, setStudents] = useState<Student[]>([])
 
   useEffect(() => {

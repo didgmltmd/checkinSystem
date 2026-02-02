@@ -64,10 +64,10 @@ export const StudentModal: React.FC<StudentModalProps> = ({
             <div className="space-y-4 animate-in slide-in-from-top-2 duration-200">
               <div className="p-4 bg-blue-50 border border-blue-100 rounded-xl mb-2">
                 <p className="text-xs text-blue-700 font-black mb-2 flex items-center gap-1">
-                  <User className="w-3 h-3" /> 데이터 수정 모드
+                  <User className="w-3 h-3" /> 데이터 수정
                 </p>
                 <p className="text-[11px] text-blue-600 font-bold leading-tight">
-                  이미지 인식 오류나 오탈자가 있을 경우 직접 수정할 수 있습니다.
+                  데이터 오류 수정를 수정해주세요.
                 </p>
               </div>
 
