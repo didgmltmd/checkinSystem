@@ -102,17 +102,6 @@ export const BuildingGrid: React.FC<BuildingGridProps> = ({
     return map
   }, [bStudents, floors])
 
-  const studentsByFloor = useMemo(() => {
-    const map = new Map<Floor, Student[]>()
-    floors.forEach((floor) => {
-      map.set(
-        floor,
-        bStudents.filter((s) => s.room.startsWith(floor.toString())),
-      )
-    })
-    return map
-  }, [bStudents, floors])
-
   const studentBySlot = useMemo(() => {
     const map = new Map<string, Student>()
     bStudents.forEach((student) => {
