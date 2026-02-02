@@ -7,7 +7,7 @@ import { toast } from 'sonner'
 interface BuildingGridProps {
   buildingId: number
   students: Student[]
-  onUpdateStatus: (id: string, field: keyof Student, value: boolean) => void
+  onUpdateStatus: (id: string, field: keyof Student, value: Student[keyof Student]) => void
 }
 
 type Floor = 1 | 2 | 3 | 4 | 5
@@ -21,7 +21,7 @@ const BUILDING_FLOORS: Record<number, Floor[]> = {
 
 const ROOM_RULES: Record<
   number,
-  Record<Floor, { start: number; count: number; exclude?: Set<string> }>
+  Partial<Record<Floor, { start: number; count: number; exclude?: Set<string> }>>
 > = {
   1: {
     1: { start: 101, count: 13 },
@@ -221,7 +221,6 @@ export const BuildingGrid: React.FC<BuildingGridProps> = ({
 
         {floors.map((floor) => {
           const stats = statsByFloor.get(floor)
-          const floorStudents = studentsByFloor.get(floor) ?? []
           const roomNumbers = getRoomNumbers(buildingId, floor)
           if (!stats || roomNumbers.length === 0) return null
 
